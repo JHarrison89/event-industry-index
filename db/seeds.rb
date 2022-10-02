@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Job.create!([
+  {
+    title: "Software Engineer",
+    desc: "Kiwi"
+  },
+  {
+    title: "Product Manager",
+    desc: "Orange"
+  },
+  {
+    title: "Engineering Manager",
+    desc: "Apple"
+  },
+  {
+    title: "Product Owner",
+    desc: "Banana"
+  },
+  {
+    title: "Product Owner",
+    desc: "Banana"
+  },
+])

@@ -1,0 +1,63 @@
+<div class="row-span-2 col-span-5">
+  <h1 class="font-bold text-4xl">Jobs#index</h1>
+  <p>Find me in app/views/jobs/index.html.erb</p>
+
+        <!-- Table -->
+        <div class="w-full mx-auto bg-white shadow-lg border border-gray-200 rounded-md">
+            <header class="px-5 py-4 border-b border-gray-100">
+                <div class="font-semibold text-gray-800">Job List</div>
+            </header>
+
+            <div class="overflow-x-auto p-3">
+                <table class="table-auto w-full">
+                    <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                        <tr>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Job Title</div>
+                            </th>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Job Description</div>
+                            </th>
+                                <th class="p-2">
+                                <div class="font-semibold text-left">Link</div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-sm divide-y divide-gray-100">
+                     <% @jobs.each do |job| %>
+                        <tr>
+                            <td class="p-2">
+                                <div class="font-medium text-gray-800">
+                                    <%= job.title%>
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="font-medium text-gray-800">
+                                    <%= job.desc %>
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="font-medium text-gray-800">
+                                    <p class="text-sky-400/100"> <%= link_to  'view', job_path(job.id) %> </p>
+                                </div>
+                            </td>
+                        </tr>
+                       
+                      <% end %>                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- total amount -->
+            <div class="flex justify-end font-bold space-x-4 text-2xl border-t border-gray-100 px-5 py-4">
+                <div>Total</div>
+                <div class="text-blue-600">RM <span x-text="total.toFixed(2)"></span></div>
+            </div>
+
+            <div class="flex justify-end">
+                <!-- send this data to backend (note: use class 'hidden' to hide this input) -->
+                <input type="hidden" class="border border-black bg-gray-50" x-model="selected" />
+            </div>
+        </div>
+</div>
